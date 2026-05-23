@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "date": "2026-05-23",
+    "title": "Learned about vLLM for AI Inference",
+    "description": "Studied vLLM, an open-source library for high-throughput and memory-efficient LLM inference. Followed the tutorial from Vizuara (https://youtu.be/QyHHbeXqgrQ)."
+  },
+  {
+    "date": "2026-05-23",
+    "title": "Revised Python Basics via NPTEL",
+    "description": "Completed a revision of core Python concepts using the NPTEL tutorial (https://youtu.be/cF025BechXo)."
+  }
+]
