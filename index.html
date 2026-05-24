@@ -316,7 +316,7 @@
                                 <h3 class="entry-title text-2xl leading-tight mb-4">${entry.title}</h3>
                                 
                                 <div class="entry-description text-[15px]">
-                                    ${entry.description.replace(/\n/g, '<br>')}
+                                    ${linkify(entry.description.replace(/\n/g, '<br>'))}
                                 </div>
                             </div>
                         </div>
