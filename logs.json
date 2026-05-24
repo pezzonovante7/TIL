@@ -8,5 +8,10 @@
     "date": "2026-05-23",
     "title": "Revised Python Basics via NPTEL",
     "description": "Completed a revision of core Python concepts using the NPTEL tutorial (https://youtu.be/cF025BechXo)."
+  },
+  {
+    "date": "2026-05-24",
+    "title": "Lifecycle of a Prompt During Inference and MAX Serve Architecture",
+    "description": "Explored the end-to-end lifecycle of a prompt/request within Modular's open-source MAX Serve inference server. Key topics included the dual-process architecture (API Server for request handling, preprocessing, tokenization, and post-processing; Model Worker for efficient batching and GPU execution), TextContext and TokenBuffer state management, scheduling optimizations such as prefix caching and chunked prefill, priority handling between token generation and context encoding, GPU pipeline execution, and streaming response formatting. Video reference: https://youtu.be/hewZwTwDBcM"
   }
 ]
