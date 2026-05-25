@@ -2,16 +2,19 @@
   {
     "date": "2026-05-23",
     "title": "Learned about vLLM for AI Inference",
-    "description": "Studied vLLM, an open-source library for high-throughput and memory-efficient LLM inference. Followed the tutorial from Vizuara (https://youtu.be/QyHHbeXqgrQ)."
+    "description": "Studied `vLLM`, an open-source library for high-throughput and memory-efficient LLM inference. Followed the tutorial from Vizuara (https://youtu.be/QyHHbeXqgrQ).",
+    "tags": ["AI", "vLLM", "Inference"]
   },
   {
     "date": "2026-05-23",
     "title": "Revised Python Basics via NPTEL",
-    "description": "Completed a revision of core Python concepts using the NPTEL tutorial (https://youtu.be/cF025BechXo)."
+    "description": "Completed a revision of core Python concepts using the NPTEL tutorial (https://youtu.be/cF025BechXo). Key topics included loops, list comprehensions, and standard functions.",
+    "tags": ["Python", "Basics"]
   },
   {
     "date": "2026-05-24",
     "title": "Lifecycle of a Prompt During Inference and MAX Serve Architecture",
-    "description": "Explored the end-to-end lifecycle of a prompt/request within Modular's open-source MAX Serve inference server. Key topics included the dual-process architecture (API Server for request handling, preprocessing, tokenization, and post-processing; Model Worker for efficient batching and GPU execution), TextContext and TokenBuffer state management, scheduling optimizations such as prefix caching and chunked prefill, priority handling between token generation and context encoding, GPU pipeline execution, and streaming response formatting. Video reference: https://youtu.be/hewZwTwDBcM"
+    "description": "Explored the end-to-end lifecycle of a prompt/request within Modular's open-source MAX Serve inference server. Key topics included:\n\n* **Dual-process architecture**: API Server (request handling, preprocessing, tokenization) and Model Worker (GPU execution).\n* **State management**: `TextContext` and `TokenBuffer` tracking.\n* **Scheduling**: Prefix caching and chunked prefill.\n* **GPU Pipeline**: High-throughput streaming response formatting.\n\nVideo reference: https://youtu.be/hewZwTwDBcM",
+    "tags": ["Inference", "MAX", "API", "Hardware"]
   }
 ]
