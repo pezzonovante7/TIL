@@ -7,45 +7,58 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
         body {
-            font-family: 'Outfit', system_ui, sans-serif;
+            font-family: 'JetBrains Mono', monospace;
             transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(125, 133, 144, 0.035) 1px, transparent 0);
+            background-size: 24px 24px;
+            pointer-events: none;
+            z-index: -5;
         }
         
         .heading-serif {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'JetBrains Mono', monospace;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.04em;
         }
 
         /* Light Theme (Default - Warm) */
         :root {
-            --bg: #F8FAFC;
-            --card-bg: rgba(255, 255, 255, 0.8);
-            --accent: #6366F1;
-            --accent-light: #3B82F6;
-            --text-primary: #0F172A;
-            --text-secondary: #475569;
-            --border: #E2E8F0;
-            --date-badge-bg: rgba(99, 102, 241, 0.08);
-            --date-badge-text: #4F46E5;
-            --nav-bg: rgba(248, 250, 252, 0.8);
+            --bg: #f6f8fa;
+            --card-bg: #ffffff;
+            --accent: #0969da;
+            --accent-light: #2ea44f;
+            --text-primary: #24292f;
+            --text-secondary: #57606a;
+            --border: #d0d7de;
+            --date-badge-bg: rgba(9, 105, 218, 0.08);
+            --date-badge-text: #0969da;
+            --nav-bg: rgba(246, 248, 250, 0.8);
         }
 
         /* Dark Theme (Warm Dark) */
         .dark {
-            --bg: #030712;
-            --card-bg: rgba(17, 24, 39, 0.45);
-            --accent: #8B5CF6;
-            --accent-light: #06B6D4;
-            --text-primary: #F3F4F6;
-            --text-secondary: #9CA3AF;
-            --border: rgba(255, 255, 255, 0.06);
-            --date-badge-bg: rgba(139, 92, 246, 0.12);
-            --date-badge-text: #C084FC;
-            --nav-bg: rgba(3, 7, 18, 0.8);
+            --bg: #06090e;
+            --card-bg: #0c1017;
+            --accent: #10b981;
+            --accent-light: #06b6d4;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --border: #30363d;
+            --date-badge-bg: rgba(16, 185, 129, 0.12);
+            --date-badge-text: #34d399;
+            --nav-bg: rgba(6, 9, 14, 0.85);
         }
 
         body {
@@ -62,6 +75,7 @@
         .her-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
+            border-radius: 1rem !important;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -71,9 +85,9 @@
         }
         
         .her-card:hover {
-            transform: translateY(-4px) scale(1.005);
-            box-shadow: 0 20px 40px -15px color-mix(in srgb, var(--accent) 18%, transparent);
-            border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+            transform: translateY(-3px) scale(1.002);
+            box-shadow: 0 16px 32px -10px color-mix(in srgb, var(--accent) 15%, transparent);
+            border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
         }
 
         .til-entry {
@@ -87,7 +101,7 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 5px;
+            width: 4px;
             background: linear-gradient(to bottom, var(--accent), var(--accent-light));
             border-radius: 9999px 0 0 9999px;
         }
@@ -118,6 +132,20 @@
             line-height: 1.7;
         }
 
+        code {
+            background-color: var(--date-badge-bg);
+            color: var(--date-badge-text);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
+
+        .dark code {
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
         .theme-toggle {
             transition: all 0.2s ease;
         }
@@ -132,12 +160,14 @@
 
         #search-input {
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'JetBrains Mono', monospace;
+            border-radius: 0.75rem !important;
         }
 
         #search-input:focus {
             border-color: var(--accent) !important;
-            box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 15%, transparent);
-            transform: scale(1.01);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
+            transform: scale(1.005);
         }
 
         ::-webkit-scrollbar {
@@ -161,7 +191,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(16px);
+                transform: translateY(12px);
             }
             to {
                 opacity: 1;
@@ -171,12 +201,12 @@
 
         @keyframes float-1 {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(5%, 5%) scale(1.05); }
+            50% { transform: translate(3%, 3%) scale(1.03); }
         }
 
         @keyframes float-2 {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-5%, -5%) scale(1.03); }
+            50% { transform: translate(-3%, -3%) scale(1.02); }
         }
 
         .animate-float-1 {
@@ -188,7 +218,7 @@
         }
 
         .animate-fade-in-up {
-            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
         .section-header {
@@ -250,7 +280,7 @@
     <div class="max-w-4xl mx-auto px-6 pt-12 pb-8">
         <div class="max-w-2xl">
             <div class="flex items-center gap-x-3 mb-3">
-                <div class="px-4 py-1.5 rounded-full text-xs font-medium tracking-[1px]" 
+                <div class="px-3 py-1 rounded-md text-xs font-semibold tracking-[0.5px]" 
                      style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent);">
                     PERSONAL JOURNAL
                 </div>
