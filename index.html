@@ -22,30 +22,30 @@
 
         /* Light Theme (Default - Warm) */
         :root {
-            --bg: #F8F4ED;
-            --card-bg: #FFFFFF;
-            --accent: #E85D04;
-            --accent-light: #FF8C61;
-            --text-primary: #2C2522;
-            --text-secondary: #6B625B;
-            --border: #EDE6D9;
-            --date-badge-bg: #F0E9DC;
-            --date-badge-text: #E85D04;
-            --nav-bg: rgba(248, 244, 237, 0.75);
+            --bg: #F8FAFC;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --accent: #6366F1;
+            --accent-light: #3B82F6;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --border: #E2E8F0;
+            --date-badge-bg: rgba(99, 102, 241, 0.08);
+            --date-badge-text: #4F46E5;
+            --nav-bg: rgba(248, 250, 252, 0.8);
         }
 
         /* Dark Theme (Warm Dark) */
         .dark {
-            --bg: #1F1A17;
-            --card-bg: #2A2420;
-            --accent: #FF6B35;
-            --accent-light: #FF8C61;
-            --text-primary: #F5F0E6;
-            --text-secondary: #B8B0A0;
-            --border: #3D3631;
-            --date-badge-bg: #3D3631;
-            --date-badge-text: #FF8C61;
-            --nav-bg: rgba(31, 26, 23, 0.75);
+            --bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.45);
+            --accent: #8B5CF6;
+            --accent-light: #06B6D4;
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --border: rgba(255, 255, 255, 0.06);
+            --date-badge-bg: rgba(139, 92, 246, 0.12);
+            --date-badge-text: #C084FC;
+            --nav-bg: rgba(3, 7, 18, 0.8);
         }
 
         body {
@@ -62,19 +62,34 @@
         .her-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
                         box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.3s ease,
                         background-color 0.3s ease;
         }
         
         .her-card:hover {
             transform: translateY(-4px) scale(1.005);
-            box-shadow: 0 20px 30px -10px color-mix(in srgb, var(--accent) 12%, transparent);
-            border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+            box-shadow: 0 20px 40px -15px color-mix(in srgb, var(--accent) 18%, transparent);
+            border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
         }
 
         .til-entry {
-            border-left: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .til-entry::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+            border-radius: 9999px 0 0 9999px;
         }
 
         .date-badge {
@@ -154,6 +169,24 @@
             }
         }
 
+        @keyframes float-1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 5%) scale(1.05); }
+        }
+
+        @keyframes float-2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-5%, -5%) scale(1.03); }
+        }
+
+        .animate-float-1 {
+            animation: float-1 25s ease-in-out infinite;
+        }
+
+        .animate-float-2 {
+            animation: float-2 30s ease-in-out infinite alternate;
+        }
+
         .animate-fade-in-up {
             animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
@@ -168,8 +201,8 @@
     </style>
 </head>
 <body>
-    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full opacity-[0.06] dark:opacity-[0.03] pointer-events-none blur-[120px] transition-colors duration-500" style="background: radial-gradient(circle, var(--accent) 0%, transparent 70%); z-index: -10;"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full opacity-[0.05] dark:opacity-[0.02] pointer-events-none blur-[120px] transition-colors duration-500" style="background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%); z-index: -10;"></div>
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full opacity-[0.08] dark:opacity-[0.05] pointer-events-none blur-[120px] transition-colors duration-500 animate-float-1" style="background: radial-gradient(circle, var(--accent) 0%, transparent 70%); z-index: -10;"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full opacity-[0.07] dark:opacity-[0.04] pointer-events-none blur-[120px] transition-colors duration-500 animate-float-2" style="background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%); z-index: -10;"></div>
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 border-b border-[var(--border)] transition-all duration-300" id="navbar">
