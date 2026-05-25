@@ -245,6 +245,11 @@
             }
         }
 
+        function linkify(text) {
+            const urlRegex = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+            return text.replace(urlRegex, (url) => `<a href="${url}" target="_blank" class="text-[var(--accent)] hover:underline">${url}</a>`);
+        }
+
         // Format date
         function formatDate(dateStr) {
             const date = new Date(dateStr);
