@@ -287,6 +287,16 @@
             font-weight: 500;
             color: var(--text-secondary);
         }
+
+        @media (max-width: 768px) {
+            .overflow-x-auto {
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .overflow-x-auto::-webkit-scrollbar {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
