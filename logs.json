@@ -22,5 +22,11 @@
     "title": "Free Access to NVIDIA GPUs for Learning via Google Colab and Kaggle",
     "description": "Today I learned that free access to **NVIDIA GPUs** is available for learning and educational purposes through platforms such as **Google Colab** and **Kaggle**. This valuable insight was gained during a conversation with Grok.",
     "tags": ["GPU", "Google Colab", "Kaggle", "AI"]
+  },
+  {
+    "date": "2026-05-26",
+    "title": "Introduction to GPU Programming and LLM Attention Mechanism Optimizations",
+    "description": "This marked the first day of exploring **GPU programming**. Developed an initial understanding of the fundamental differences between the GPU execution paradigm and traditional sequential **CPU** processing. Reviewed sequential matrix multiplication and examined its critical importance in AI computations by studying the technical blog on NVIDIA's Blackwell architecture: [Matrix Multiplication on NVIDIA's Blackwell (Part 1: Introduction)](https://www.modular.com/blog/matrix-multiplication-on-nvidias-blackwell-part-1-introduction).\n\nAdditionally, viewed a YouTube video discussing the advantages of building large language models from scratch. Key technical insights included:\n\n- In many modern LLMs, **Multi-Head Attention (MHA)** has been replaced by **Grouped Query Attention (GQA)**. This architectural change significantly reduces the size of the **KV cache**, which is particularly advantageous when handling longer context lengths.\n- The combination of **Multi-Head Attention** with **sliding window attention** further contributes to substantial reductions in KV cache memory requirements.\n\nVideo reference: https://youtu.be/TXzQ7PGpO6w",
+    "tags": ["GPU Programming", "LLM", "Attention Mechanisms", "Matrix Multiplication"]
   }
 ]
