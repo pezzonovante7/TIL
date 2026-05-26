@@ -16,5 +16,11 @@
     "title": "Lifecycle of a Prompt During Inference and MAX Serve Architecture",
     "description": "Explored the end-to-end lifecycle of a prompt/request within Modular's open-source MAX Serve inference server. Key topics included:\n\n* **Dual-process architecture**: API Server (request handling, preprocessing, tokenization) and Model Worker (GPU execution).\n* **State management**: `TextContext` and `TokenBuffer` tracking.\n* **Scheduling**: Prefix caching and chunked prefill.\n* **GPU Pipeline**: High-throughput streaming response formatting.\n\nVideo reference: https://youtu.be/hewZwTwDBcM",
     "tags": ["Inference", "MAX", "API", "Hardware"]
+  },
+  {
+    "date": "2026-05-26",
+    "title": "Free Access to NVIDIA GPUs for Learning via Google Colab and Kaggle",
+    "description": "Today I learned that free access to **NVIDIA GPUs** is available for learning and educational purposes through platforms such as **Google Colab** and **Kaggle**. This valuable insight was gained during a conversation with Grok.",
+    "tags": ["GPU", "Google Colab", "Kaggle", "AI"]
   }
 ]
